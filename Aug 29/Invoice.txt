@@ -1,0 +1,65 @@
+package assignment;
+import java.util.*;
+
+ class Invoice {
+	 String partNumber;
+	 String partDescription;
+	 int qualityOfPurchased;
+	 double pricePerItem;
+	
+	 Invoice(String partNumnber,String partDescription,int qualityOfPurchased,double pricePerItem) {
+		this.partNumber=partNumber;
+		this.partDescription=partDescription;
+		this.qualityOfPurchased=qualityOfPurchased;
+		this.pricePerItem=pricePerItem;
+	
+	 if(qualityOfPurchased<0) {
+		 qualityOfPurchased=0;
+	 }
+	 if(pricePerItem<0) {
+		 pricePerItem=0;
+	 }
+	 }
+	 void setDetails(String partNumber,String partDescription,int qualityOfPurchased,double pricePerItem) {
+		 if(qualityOfPurchased<0) {
+			 qualityOfPurchased=0;
+		 }
+		 if(pricePerItem<0) {
+			 pricePerItem=0;
+		 }
+		 this.partNumber=partNumber;
+		 this.partDescription=partDescription;
+		 this.qualityOfPurchased=qualityOfPurchased;
+		 this.pricePerItem=pricePerItem;
+	 }
+	 String getpartNumber() {
+		 return partNumber;
+	 }
+	 String getpartDescription() {
+		 return partDescription;
+	 }
+	 int getqualityOfPurchased() {
+		 return qualityOfPurchased;
+		 
+	 }
+	 double getpricePerItem() {
+		 double amount=qualityOfPurchased*pricePerItem;
+		 return amount;
+	 }
+	 double getInvoice() {
+		 double amount=qualityOfPurchased*pricePerItem;
+		  return amount;
+	 
+	 }
+ }
+class Hardware {
+	public static void main(String args[]) {
+		Invoice a=new Invoice("342","laptop",3,67544);
+		a.setDetails("543","mobile",5,14675);
+		System.out.println("Number of product" + a.getpartNumber());
+		System.out.println("Number of product" + a.getpartDescription());
+		System.out.println("Number of product" + a.getqualityOfPurchased());
+		System.out.println("Number of product" + a.getpricePerItem());
+		System.out.println("Number of product" + a.getInvoice());
+	}
+}

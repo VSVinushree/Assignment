@@ -1,0 +1,73 @@
+package assignment;
+
+import java.time.*;
+import java.time.LocalDate;
+import java.util.Scanner;
+
+public class Date {
+	public static void main(String args[]) {
+		// Today's date
+		LocalDate date = LocalDate.now();
+		System.out.println(date);
+		// Particular date
+		LocalDate date1 = LocalDate.of(2000, 12, 20);
+		System.out.println("Birthday :" + date1);
+		// Current time
+		LocalTime time = LocalTime.now();
+		System.out.println(time);
+		// Date before and after one year
+		System.out.println(date);
+		System.out.println("After one year:" + date.plusMonths(12));
+		System.out.println("Before one year:" + date.minusMonths(12));
+		
+		 LocalDate dateOfBirth = LocalDate.now();
+		MonthDay birthday = MonthDay.of(dateOfBirth.getMonth(), dateOfBirth.getDayOfMonth());
+		MonthDay currentMonthDay = MonthDay.from(LocalDate.now());
+
+		if (currentMonthDay.equals(birthday)) {
+			System.out.println("Yes!!");
+		} else {
+			System.out.println("Sorry, today is not your birthday");
+		}
+		   //Leap year
+			LocalDate date3 = LocalDate.now();
+			Scanner scan= new Scanner(System.in);
+			int year =scan.nextInt();
+			LocalDate date4=date1.withYear(year);
+			boolean isLeap=date4.isLeapYear();
+			if(isLeap) {
+				System.out.println(date4.getYear() +"is a leap year.");
+			} else {
+				System.out.println(date4.getYear() + "is not a leap year");
+			}
+			// Adding hours
+			System.out.println(time);
+			System.out.println("After one hour:" + time.plusHours(2));
+			
+	LocalDate dateTime1 = LocalDate.of(2007,02,01);
+    LocalDate dateTime2 = LocalDate.of(2007,02,01);      
+    Boolean bool1 = dateTime1.isAfter(dateTime2);  
+    Boolean bool2 = dateTime1.isBefore(dateTime2);
+    Boolean bool3 = dateTime1.isEqual(dateTime2); 
+    if(bool1){
+       System.out.println(dateTime1+" is after "+dateTime2);
+    }
+    else if(bool2)
+    {
+       System.out.println(dateTime1+" is before "+dateTime2);
+    }
+    else if(bool3)
+    {
+        System.out.println(dateTime1+" is equal to "+dateTime2);
+    }
+    System.out.println("Current day:"+date.getDayOfWeek());
+    System.out.println("Curren date:"+date.getDayOfMonth());
+    System.out.println("Current month:"+date.getMonth());
+    System.out.println("Current year:"+date.getYear());
+}
+}
+	
+	
+	
+
+

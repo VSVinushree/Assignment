@@ -1,0 +1,44 @@
+package assignment;
+
+import java.util.*;
+
+class ResultException extends Exception {
+	ResultException() {
+
+	}
+
+}
+
+public class InternalMarks {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		int internalmarks;
+		int externalmarks;
+		System.out.println("Enter the internal marks");
+		internalmarks = sc.nextInt();
+
+		try {
+			if (internalmarks > 40) {
+				throw new ResultException();
+			} else {
+				System.out.println("Internal marks is");
+			}
+		} catch (ResultException r) {
+			System.out.println("The internal marks exceed");
+		}
+
+		System.out.println("Enter the external marks");
+		externalmarks = sc.nextInt();
+
+		try {
+			if (externalmarks > 60) {
+				throw new ResultException();
+			} else {
+				System.out.println("External marks is");
+			}
+		} catch (ResultException r) {
+			System.out.println("The external marks exceed");
+		}
+
+	}
+}

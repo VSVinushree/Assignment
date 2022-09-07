@@ -1,0 +1,43 @@
+package assignment;
+
+import java.util.List;
+import java.util.stream.Stream;
+import java.lang.reflect.Constructor;
+import java.util.*;
+
+class Company {
+	String name;
+	int id;
+	int age;
+	double salary;
+
+	Company(String name, int id, int age, double salary) {
+		this.name = name;
+		this.id = id;
+		this.age = age;
+		this.salary = salary;
+	}
+}
+
+public class MaxSalary1 {
+	public static void main(String args[]) {
+		List<Company> list = new ArrayList<Company>();
+		list.add(new Company("Ahan", 1, 25, 15755));
+		list.add(new Company("Varun", 2, 26, 14755));
+		list.add(new Company("Vivek", 3, 24, 20551));
+		list.add(new Company("Karan", 4, 26, 16557));
+
+		list.stream().filter(s -> s.salary > 15000)
+				.forEach(n -> System.out.println(n.name + " " + n.id + " " + n.age + " " + n.salary));
+		list.stream().filter(n -> n.name.startsWith("V"))
+				.forEach(n -> System.out.println("name starts with V is" + n.name));
+		Company salaryB = list.stream().max((s1, s2) -> s1.salary > s2.salary ? 1 : -1).get();
+		System.out.println("maximum salary:" + salaryB.salary);
+		long total = list.stream().count();
+		System.out.println("Total number of employee" + total);
+		list.stream().filter(n1 -> n1.name.length() > 4)
+				.forEach(n -> System.out.println("Employee name greater than 4:" + n.name));
+		list.stream().sorted((n1, n2) -> n1.name.compareTo(n2.name))
+				.forEach(n -> System.out.println("sorted employee details:" + n.name + " " + n.id + " " + n.salary));
+	}
+}

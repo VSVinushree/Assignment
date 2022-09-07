@@ -1,0 +1,12 @@
+package assignment;
+
+import java.util.*;
+
+public class Reverse {
+	public static void main(String args[]) {
+		StringBuilder name = new StringBuilder("Maximum");
+		name.reverse();
+		System.out.println(name);
+	}
+
+}

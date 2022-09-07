@@ -1,0 +1,57 @@
+package assignment;
+import java.util.*;
+
+public class Area {
+
+	public static void main(String args[]) {
+		Scanner sc=new Scanner(System.in);
+		int n;
+		System.out.println("enter the number iterations");
+		n=sc.nextInt();
+		int arr[]=new int [n];
+		Rectangle a[]=new Rectangle[n];
+		for (int i=0;i<n;i++) {
+		System.out.println("Enter the height");
+		int h=sc.nextInt();
+		System.out.println("Enter the width");
+		int w=sc.nextInt();
+		a[i]=new Rectangle(h,w);
+		arr[i]=a[i].getArea();
+		System.out.println("Area of rectangle" +arr[i]);
+		
+		}
+				
+
+	
+		   Arrays.sort(arr);
+		   int min=arr[0];
+		   int max=arr[n-1];
+		   System.out.println("The minimum value"+min +" The maximum value"+max);
+		   
+		   for (int i=0;i<n;i++) {
+			   if(max==a[i].getArea()) {
+				   System.out.println("Height and Width of maximum area" + a[i].height+" "+a[i].width);
+				   break;
+			   }
+		   }
+		   for(int i=0;i<n;i++) {
+			   if(min==a[i].getArea()) {
+				   System.out.println("Height and Width of minimum area" + a[i].height+" "+a[i].width);
+			   }
+			   }
+		   }
+	}
+	
+class Rectangle {
+	int height;
+	int width;
+	
+	Rectangle(int h,int w) {
+		height=h;
+		width=w;
+	}
+	int getArea() {
+		return height*width;
+	}
+	}
+ 

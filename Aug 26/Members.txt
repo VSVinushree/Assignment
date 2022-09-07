@@ -1,0 +1,72 @@
+
+package assignment;
+
+import java.util.*;
+
+class Member {
+	String name;
+	int age;
+	String address;
+	int phoneNumber;
+	int salary;
+
+	public void Member(String n, int a, int pN, String ad, int s) {
+		name = n;
+		age = a;
+		phoneNumber = pN;
+		address = ad;
+		salary = s;
+	}
+
+	void printSalary() {
+		System.out.println(salary);
+	}
+
+}
+
+class Employee extends Member {
+	String Specialization;
+
+	public void Employee(String n, int a, String ad, int pN, int s, String Spcl) {
+		this.name = n;
+		this.age = a;
+		this.phoneNumber = pN;
+		this.address = ad;
+		this.salary = s;
+		Specialization = Spcl;
+	}
+	/*
+	 * public void print_salary( ) { System.out.println(salary); }
+	 */
+
+}
+
+class Manager extends Member {
+	String Department;
+
+	public void Manager(String n, int a, int pN, String ad, int s, String dep) {
+		this.name = n;
+		this.age = a;
+		this.phoneNumber = pN;
+		this.address = ad;
+		this.salary = s;
+		Department = dep;
+	}
+
+	void printdep() {
+		System.out.println("Department" + Department);
+
+	}
+}
+
+class Organization {
+	public static void main(String args[]) {
+		Employee obj1 = new Employee();
+		Manager obj2 = new Manager();
+		obj1.Employee("Karan", 24, "Bengaluru", 6571, 45000, "Coding");
+		obj2.Manager("Aman", 35, 5874, "Mumbai", 80000, "Code");
+		obj1.printSalary();
+		obj2.printdep();
+
+	}
+}

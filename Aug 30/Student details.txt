@@ -1,0 +1,81 @@
+package assignment;
+
+import java.util.*;
+
+class Student {
+	String StudentName;
+	String RollNumber;
+Student(String StudentName,String RollNumber){
+	this.StudentName=StudentName;
+	this.RollNumber=RollNumber;
+	
+	
+}
+
+	 void show() {
+		 System.out.println("StudentName is: "+StudentName+" "+" and RollNumber is"+RollNumber);
+	 }
+	 }
+class Test extends Student{
+	int EnglishMarks;
+	int ScienceMarks;
+	int HindiMarks;
+	
+Test(String StudentName,String RollNumber,int EnglishMarks,int ScienceMarks,int HindiMarks){
+	super(StudentName,RollNumber);
+	this.EnglishMarks=EnglishMarks;
+	this.ScienceMarks=ScienceMarks;
+	this.HindiMarks=HindiMarks;
+}
+	
+	void Show_marks() {
+		System.out.println("Marks obtained in English "+EnglishMarks);
+		System.out.println("Marks obtained in Science "+ScienceMarks);
+		System.out.println("Marks obtained in Hindi "+HindiMarks);
+	}
+}
+	
+interface Sports {
+	int SPORTS_MARKS=25;
+static void show_sportswt() {
+		System.out.println("sports marks" +SPORTS_MARKS);
+	}
+}
+	class Result extends Test implements Sports {
+		Result(String StudentName,String RollNumber,int EnglishMarks,int ScienceMarks,int HindiMarks) {
+			super(StudentName,RollNumber,EnglishMarks,ScienceMarks,HindiMarks);
+		}
+	void Result() {
+		double average=(EnglishMarks+ScienceMarks+HindiMarks)/3;
+		double total=average+SPORTS_MARKS;
+		System.out.println("Total marks obtained from the students" +total);
+	}
+	}
+	class Details {
+		public static void main(String args[]) {
+			Scanner sc=new Scanner(System.in);
+		    String StudentName;
+		    String RollNumber;
+		    int EnglishMarks;  
+		    int ScienceMarks;
+		    int HindiMarks;
+		    System.out.println("Enter name of Student:");
+		    StudentName=sc.next();
+		    System.out.println("Enter Roll number of Student");
+		    RollNumber=sc.next();
+		    System.out.println("Enter the marks obtained in English");
+		    EnglishMarks=sc.nextInt();
+		    System.out.println("Enter the marks obatained in Science");
+		    ScienceMarks=sc.nextInt();
+		    System.out.println("Enter the marks obtained in Hindi");
+		    HindiMarks=sc.nextInt();
+		    Result a2=new Result(StudentName,RollNumber,EnglishMarks,ScienceMarks,HindiMarks);
+		    a2.Result();
+		    a2.show();
+		    a2.Show_marks();
+	}
+}
+	
+	
+	
+

@@ -1,0 +1,10 @@
+package assignment;
+import java.util.*;
+public class Delete {
+	public static void main(String args[]) {
+		StringBuilder s1= new StringBuilder("limited");
+		s1.delete(2,5);
+		System.out.println(s1);     
+	}
+
+}

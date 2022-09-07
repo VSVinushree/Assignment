@@ -1,0 +1,13 @@
+package assignment;
+
+import java.util.*;
+
+public class SubString {
+	public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		String s = "Eclipse Ide";
+		String name = s.substring(7, s.length());
+		System.out.println(name);
+	}
+
+}
